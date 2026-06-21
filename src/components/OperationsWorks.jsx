@@ -69,7 +69,7 @@ export default function OperationsWorks() {
               {Array.from({ length: cat.count }, (_, i) => (
                 <ImageCard
                   key={`${cat.prefix}-${i + 1}`}
-                  src={`/images/运营作品/${cat.folder}/${cat.prefix}${i + 1}.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/运营作品/${cat.folder}/${cat.prefix}${i + 1}.jpg`}
                   alt={`${cat.label} ${i + 1}`}
                 />
               ))}

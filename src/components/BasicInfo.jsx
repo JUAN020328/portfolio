@@ -63,7 +63,7 @@ export default function BasicInfo() {
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-subtle)' }}
             >
               {!imgError ? (
-                <img src="/images/avatar.jpg" alt="陈俊璇"
+                <img src={`${import.meta.env.BASE_URL}images/avatar.jpg`} alt="陈俊璇"
                   onError={() => setImgError(true)}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
