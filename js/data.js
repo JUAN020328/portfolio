@@ -13,7 +13,7 @@ export const data = {
     degree: '研究生',
     age: 24,
     avatar: './assets/images/avatar.jpg',
-    intro: '你好，我是卷卷～ 欢迎来到我的作品集！我是一名热爱新媒体运营的内容创作者与增长实践者，专注于公众号、视频号和小红书平台的内容策划、数据复盘与增长优化。我擅长从数据中洞察规律，通过内容实验驱动增长，致力于让每一篇内容都成为增长的引擎。',
+    intro: '1年新媒体运营经验，操盘3个平台账号，累计产出100+条内容，总阅读量69w+。擅长以数据驱动内容增长：通过选题矩阵搭建、A/B测试优化、多平台分发策略，将小红书互动率从4.2%提升至6.8%，单篇笔记最高阅读4.5w。善于用GPT搭建内容工作流，用Notion管理选题日历，用Excel/Python做数据复盘。关注增长，更关注增长背后的逻辑。',
     items: [
       { label: '年龄', value: '24 岁' },
       { label: '民族', value: '汉族' },
@@ -23,32 +23,30 @@ export const data = {
       { label: '毕业院校', value: '深圳大学' }
     ],
 
-    /* 核心能力领域 */
+    /* 核心能力领域 — 突出差异化 */
     capabilities: [
-      { name: '内容策划与选题设计', icon: '📝', desc: '基于数据分析与用户洞察设计内容选题矩阵' },
-      { name: '多平台内容分发', icon: '📡', desc: '公众号、小红书、视频号三平台协调运营' },
-      { name: '数据复盘与增长优化', icon: '📊', desc: '通过数据驱动迭代内容策略，提升核心指标' },
-      { name: '内容实验与A/B测试', icon: '🧪', desc: '结构化测试封面、标题、发布时间等变量' }
+      { name: '数据驱动增长策略', icon: '📊', desc: '从0到1搭建内容数据看板，通过漏斗分析定位增长瓶颈，用数据而非直觉做决策' },
+      { name: '爆款内容方法论', icon: '🎯', desc: '沉淀选题SOP、封面A/B测试框架、标题公式库，将爆款从偶然变为可复现' },
+      { name: 'AI赋能内容工作流', icon: '🤖', desc: '用GPT搭建选题生成→大纲撰写→初稿产出的半自动流水线，提升内容产出效率3倍+' },
+      { name: '跨平台增长系统', icon: '🔄', desc: '打通公众号→小红书→视频号的内容复用与流量内循环，实现单次创作多端分发' }
     ],
 
-    /* 工具能力 */
+    /* 工具能力 — 只列差异化工具 */
     tools: [
-      { name: 'GPT', icon: '🤖', level: 'expert' },
+      { name: 'GPT/Claude', icon: '🤖', level: 'expert' },
       { name: 'Notion', icon: '📝', level: 'expert' },
-      { name: 'Excel', icon: '📊', level: 'advanced' },
-      { name: '剪映', icon: '🎬', level: 'expert' },
-      { name: 'Canva', icon: '🎨', level: 'advanced' },
-      { name: 'Python', icon: '🐍', level: 'intermediate' }
-    ]
+      { name: 'Python', icon: '🐍', level: 'intermediate' },
+      { name: 'Excel', icon: '📊', level: 'advanced' }
+    ],
   },
 
   /* ========== 增长能力（进度条）========== */
   capabilities: [
-    { name: '内容策划', level: 95, theme: 'cyan' },
-    { name: '爆款选题', level: 88, theme: 'purple' },
-    { name: '数据分析', level: 90, theme: 'cyan' },
-    { name: '视频内容制作', level: 92, theme: 'purple' },
-    { name: '增长策略', level: 85, theme: 'gold' }
+    { name: '数据驱动增长', level: 90, theme: 'cyan' },
+    { name: '爆款内容方法论', level: 88, theme: 'purple' },
+    { name: 'AI工作流搭建', level: 85, theme: 'cyan' },
+    { name: '选题与策略设计', level: 95, theme: 'purple' },
+    { name: '跨平台增长系统', level: 82, theme: 'gold' }
   ],
 
   /* ========== 社交链接 ========== */
@@ -67,8 +65,8 @@ export const data = {
       subtitle: 'WECHAT OFFICIAL ACCOUNT',
       icon: '💬',
       color: 'green',
-      desc: '长图文深度内容运营，探索教育类公众号的增长方法论',
-      tags: ['长图文', '深度内容', '用户运营', '活动策划']
+      desc: '深度长图文策略：选题矩阵搭建 → SEO标题优化 → 数据漏斗复盘，单篇最高阅读3.2w',
+      tags: ['选题矩阵', 'SEO优化', '数据漏斗', '转化路径']
     },
     {
       id: 'xhs',
@@ -76,8 +74,8 @@ export const data = {
       subtitle: 'XIAOHONGSHU / RED',
       icon: '📕',
       color: 'pink',
-      desc: '爆款笔记策划与执行，封面设计+SEO优化+数据复盘',
-      tags: ['爆款策划', '封面设计', 'SEO优化', '社区运营']
+      desc: '爆款方法论：封面A/B测试 + 话题标签策略 + 评论区运营，互动率提升至6.8%',
+      tags: ['A/B测试', '封面方法论', '标签策略', '互动增长']
     },
     {
       id: 'video',
@@ -85,8 +83,8 @@ export const data = {
       subtitle: 'WECHAT VIDEO CHANNEL',
       icon: '🎥',
       color: 'gold',
-      desc: '短视频内容制作与直播运营，从选题到发布的完整链路',
-      tags: ['短视频', '剪辑制作', '直播运营', '流量增长']
+      desc: '短视频增长链路：钩子设计 → 完播率优化 → 直播转化，多平台内容复用体系',
+      tags: ['钩子设计', '完播率优化', '直播转化', '内容复用']
     },
     {
       id: 'data',
@@ -94,8 +92,8 @@ export const data = {
       subtitle: 'GROWTH ANALYTICS DASHBOARD',
       icon: '📊',
       color: 'cyan',
-      desc: '三平台数据汇总，趋势分析、爆款规律与增长洞察',
-      tags: ['数据看板', '趋势分析', '爆款规律', '增长策略']
+      desc: '三平台69w+阅读数据汇总，趋势分析、爆款规律挖掘与增长策略洞察',
+      tags: ['数据看板', '趋势分析', '爆款规律', '增长洞察']
     }
   ],
 
