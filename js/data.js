@@ -65,7 +65,7 @@ export const data = {
       subtitle: 'WECHAT OFFICIAL ACCOUNT',
       icon: '💬',
       color: 'green',
-      desc: '深度长图文策略：选题矩阵搭建 → SEO标题优化 → 数据复盘，单篇最高阅读3.2w',
+      desc: '深度长图文策略：选题矩阵搭建 → SEO标题优化 → 数据漏斗复盘，单篇最高阅读3.2w',
       tags: ['选题矩阵', 'SEO优化', '数据漏斗', '转化路径']
     },
     {
