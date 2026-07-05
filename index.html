@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="陈俊璇 · 新媒体运营作品集 | Content Growth Lab — 新媒体增长实验室">
+  <meta name="theme-color" content="#0b0f1a">
+  <title>陈俊璇 · 新媒体运营作品集 | Content Growth Lab</title>
+
+  <!-- Google Fonts: Orbitron -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Chart.js CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="stylesheet" href="css/pages/content.css">
+  <link rel="stylesheet" href="css/pages/data.css">
+  <link rel="stylesheet" href="css/pages/gallery.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <link rel="stylesheet" href="css/layout-desktop.css">
+  <link rel="stylesheet" href="css/layout-mobile.css">
+
+  <!-- App Script -->
+  <script type="module" src="js/app.js" defer></script>
+
+  <!-- 404 恢复脚本 (GitHub Pages SPA) -->
+  <script>
+    // 如果从 404.html 重定向过来，恢复原始 hash
+    (function() {
+      var redirect = sessionStorage.getItem('portfolio-redirect');
+      if (redirect) {
+        sessionStorage.removeItem('portfolio-redirect');
+        var url = new URL(redirect);
+        if (url.hash) {
+          location.replace(location.pathname + url.hash);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========== 背景层 ========== -->
+  <div id="bg-layer" aria-hidden="true">
+    <div class="bg-glow bg-glow--left"></div>
+    <div class="bg-glow bg-glow--right"></div>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- ========== 顶部导航 ========== -->
+  <nav id="top-nav">
+    <div class="nav-brand">
+      <span class="nav-logo">CONTENT GROWTH LAB</span>
+      <span class="nav-subtitle">新媒体增长实验室</span>
+    </div>
+
+    <!-- 桌面端导航链接 -->
+    <div class="nav-links" id="desktop-nav-links">
+      <a href="#home" class="nav-link active" data-route="home">首页</a>
+      <a href="#content/wechat" class="nav-link" data-route="content">公众号</a>
+      <a href="#content/xhs" class="nav-link" data-route="content">小红书</a>
+      <a href="#content/video" class="nav-link" data-route="content">视频号</a>
+      <a href="#data" class="nav-link" data-route="data">数据</a>
+      <a href="#gallery" class="nav-link" data-route="gallery">作品集</a>
+      <a href="#about" class="nav-link" data-route="about">关于</a>
+    </div>
+
+    <div class="nav-tools">
+      <button id="theme-toggle" class="nav-btn" title="切换亮色/暗色模式" aria-label="切换主题">
+        <span class="icon-sun" style="display:inline">☀️</span>
+        <span class="icon-moon" style="display:none">🌙</span>
+      </button>
+      <button id="bgm-toggle" class="nav-btn" title="背景音乐" aria-label="背景音乐开关">
+        <span class="icon-bgm">🔇</span>
+      </button>
+    </div>
+
+    <!-- 移动端菜单按钮 -->
+    <button id="mobile-menu-btn" class="nav-btn mobile-only" aria-label="菜单" style="display:none;">☰</button>
+  </nav>
+
+  <!-- ========== 主视图容器 ========== -->
+  <main id="app">
+    <div id="view-home" class="view"></div>
+    <div id="view-content" class="view hidden"></div>
+    <div id="view-data" class="view hidden"></div>
+    <div id="view-gallery" class="view hidden"></div>
+    <div id="view-about" class="view hidden"></div>
+  </main>
+
+  <!-- ========== 移动端底部导航 ========== -->
+  <nav id="mobile-nav" class="mobile-only">
+    <a href="#home" class="mob-nav-item active" data-route="home">
+      <span class="mob-nav-icon">🏠</span>
+      <span class="mob-nav-label">首页</span>
+    </a>
+    <a href="#content/wechat" class="mob-nav-item" data-route="content">
+      <span class="mob-nav-icon">📱</span>
+      <span class="mob-nav-label">内容</span>
+    </a>
+    <a href="#data" class="mob-nav-item" data-route="data">
+      <span class="mob-nav-icon">📊</span>
+      <span class="mob-nav-label">数据</span>
+    </a>
+    <a href="#gallery" class="mob-nav-item" data-route="gallery">
+      <span class="mob-nav-icon">🖼️</span>
+      <span class="mob-nav-label">作品</span>
+    </a>
+    <a href="#about" class="mob-nav-item" data-route="about">
+      <span class="mob-nav-icon">👤</span>
+      <span class="mob-nav-label">关于</span>
+    </a>
+  </nav>
+
+  <!-- ========== 图片灯箱 ========== -->
+  <div id="lightbox-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="关闭">✕</button>
+      <img id="lightbox-image" src="" alt="作品预览" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ========== 页面过渡遮罩 ========== -->
+  <div id="page-transition" class="transition-overlay"></div>
+
+  <!-- ========== 初始加载画面 ========== -->
+  <div id="app-loader">
+    <div class="loader-ring"></div>
+    <span class="loader-text">SYSTEM BOOTING...</span>
+  </div>
+
+</body>
+</html>

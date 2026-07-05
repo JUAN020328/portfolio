@@ -1,0 +1,120 @@
+/* ============================================================
+   layout-desktop.css — PC 端控制台/数据后台布局
+   Breakpoint: min-width 769px
+   ============================================================ */
+
+@media (min-width: 769px) {
+  /* ---- 顶部导航 ---- */
+  #top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-height);
+    padding: 0 var(--side-gutter);
+    background: rgba(11, 15, 26, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 10px var(--cyan-glow);
+  }
+
+  .nav-subtitle {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* 桌面导航链接 */
+  #desktop-nav-links {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .nav-link {
+    padding: 0.4em 0.9em;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .nav-link.active {
+    color: var(--cyan);
+    background: rgba(0, 245, 255, 0.08);
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.08);
+  }
+
+  /* 右侧工具栏 */
+  .nav-tools {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .nav-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-active);
+    background: rgba(0, 245, 255, 0.08);
+  }
+
+  /* 隐藏移动端专用元素 */
+  .mobile-only {
+    display: none !important;
+  }
+
+  /* ---- 主容器 ---- */
+  #app {
+    min-height: calc(100vh - var(--nav-height));
+    padding-bottom: var(--space-3xl);
+  }
+
+  /* ---- 模块入口网格（桌面 2 列）---- */
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---- 画廊网格（桌面 3 列）---- */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

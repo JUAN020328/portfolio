@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陈俊璇 · 新媒体运营作品集</title>
+  <script>
+    // GitHub Pages SPA 兼容方案：
+    // 将 404 页面上的原始 URL 保存到 sessionStorage，
+    // 然后重定向到 index.html，由 index.html 恢复 hash 路由
+    // 自动检测 GitHub Pages 项目路径
+    // 如果是 username.github.io 则 base 为 /
+    // 如果是 username.github.io/repo-name 则 base 为 /repo-name/
+    var pathParts = location.pathname.split('/');
+    // 404 页面在根目录，index.html 也在根目录
+    var basePath = location.pathname.substring(0, location.pathname.lastIndexOf('/') + 1);
+    sessionStorage.setItem('portfolio-redirect', location.href);
+    location.replace(basePath);
+  </script>
+</head>
+<body>
+  <p style="text-align:center;padding:40px;font-family:sans-serif;color:#94a3b8;">
+    正在跳转... 如果没有自动跳转，请<a href="/portfolio-site/">点击这里</a>
+  </p>
+</body>
+</html>

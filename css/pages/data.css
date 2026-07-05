@@ -1,0 +1,203 @@
+/* ============================================================
+   data.css — 数据复盘页样式
+   ============================================================ */
+
+.data-hero {
+  margin-bottom: var(--space-2xl);
+}
+
+.data-hero__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.data-hero__subtitle {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+/* ---- KPI 摘要 ---- */
+.kpi-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.kpi-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+}
+
+/* ---- 图表 ---- */
+.chart-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.chart-panel {
+  padding: var(--space-xl);
+}
+
+.chart-panel__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.chart-container--bar {
+  height: 220px;
+}
+
+/* ---- 平台对比卡片 ---- */
+.platform-cards-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.platform-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.platform-card__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.platform-card__stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.platform-card__top {
+  padding: var(--space-sm);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+}
+
+.platform-card__top-label {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xs);
+}
+
+.platform-card__top-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+.platform-card__top-reads {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan-dim);
+}
+
+/* ---- 爆款规律 ---- */
+.patterns-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.patterns-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.pattern-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--duration-fast);
+}
+
+.pattern-card:hover {
+  border-color: var(--border-active);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.pattern-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.pattern-card__index {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cyan-dim);
+  letter-spacing: 0.05em;
+}
+
+.pattern-card__rate {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--green);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.2em 0.6em;
+  border-radius: var(--radius-full);
+}
+
+.pattern-card__pattern {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.pattern-card__desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---- 响应式 ---- */
+@media (max-width: 768px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .platform-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patterns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+}

@@ -1,0 +1,228 @@
+/* ============================================================
+   layout-mobile.css — 移动端小红书信息流布局
+   Breakpoint: max-width 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* ---- 重置顶部导航 ---- */
+  #top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 16px;
+    background: rgba(11, 15, 26, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 8px var(--cyan-glow);
+  }
+
+  .nav-subtitle {
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* 隐藏桌面导航链接 */
+  #desktop-nav-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(11, 15, 26, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: var(--space-sm);
+    z-index: 99;
+  }
+
+  #desktop-nav-links.show {
+    display: flex;
+  }
+
+  #desktop-nav-links .nav-link {
+    padding: 0.8em 1.2em;
+    font-size: 0.8rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* 移动端菜单按钮 */
+  #mobile-menu-btn {
+    display: flex !important;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  /* 导航工具 */
+  .nav-tools {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .nav-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* ---- 底部导航（移动端核心）---- */
+  .mobile-only {
+    display: flex;
+  }
+
+  #mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    height: var(--mobile-nav-height);
+    background: rgba(11, 15, 26, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-subtle);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .mob-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: var(--text-muted);
+    transition: all var(--duration-fast);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mob-nav-item.active {
+    color: var(--cyan);
+  }
+
+  .mob-nav-icon {
+    font-size: 1.2rem;
+  }
+
+  .mob-nav-label {
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ---- 主容器 ---- */
+  #app {
+    min-height: calc(100vh - 50px - var(--mobile-nav-height));
+    padding-bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0));
+  }
+
+  /* ---- 页面间距 ---- */
+  .page-container {
+    padding: var(--space-md) 16px;
+  }
+
+  /* ---- 隐藏桌面专属元素 ---- */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* ---- 简化背景效果（性能优化）---- */
+  .scanlines {
+    opacity: 0.3; /* 减弱扫描线 */
+  }
+
+  .noise {
+    display: none;
+  }
+
+  .bg-glow--left,
+  .bg-glow--right {
+    opacity: 0.5;
+    filter: blur(50px);
+  }
+
+  /* ---- 卡片去掉悬停效果 ---- */
+  .card:hover {
+    transform: none;
+    box-shadow: var(--shadow-card);
+    border-color: var(--border-subtle);
+    background: var(--bg-card);
+  }
+
+  .card:active {
+    transform: scale(0.98);
+  }
+
+  /* ---- 移除 HUD 角标（移动端）---- */
+  .hud-panel::before,
+  .hud-panel::after {
+    display: none;
+  }
+
+  /* ---- 内容面板移动端样式 ---- */
+  .content-tab__label {
+    display: inline;
+    font-size: 0.65rem;
+  }
+
+  .content-tabs {
+    border-radius: var(--radius-md);
+  }
+
+  .content-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 0.6em 0.8em;
+  }
+}
+
+/* 平板适配（769-1024px） */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
